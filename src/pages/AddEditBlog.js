@@ -4,7 +4,6 @@ import "@pathofdev/react-tag-input/build/index.css";
 import { db, storage } from "../firebase";
 import { useNavigate, useParams } from "react-router-dom";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import { Editor } from "@tinymce/tinymce-react";
 
 import {
   addDoc,
@@ -39,7 +38,6 @@ const AddEditBlog = ({ user, setActive }) => {
   const [form, setForm] = useState(initialState);
   const [file, setFile] = useState(null);
   const [progress, setProgress] = useState(null);
-  const [plainTextDescription, setPlainTextDescription] = useState(""); // Define state for plain text content
 
   const { id } = useParams();
 

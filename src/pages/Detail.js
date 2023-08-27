@@ -22,12 +22,11 @@ import RelatedBlog from "../components/RelatedBlog";
 import Tags from "../components/Tags";
 import UserComments from "../components/UserComments";
 import { db } from "../firebase";
-import Spinner from "../components/Spinner";
 
 const Detail = ({ setActive, user }) => {
   const userId = user?.uid;
   const { id } = useParams();
-  const [loading, setLoading] = useState(false);
+  const [setLoading] = useState(false);
   const [blog, setBlog] = useState(null);
   const [blogs, setBlogs] = useState([]);
   const [tags, setTags] = useState([]);
@@ -55,10 +54,6 @@ const Detail = ({ setActive, user }) => {
     id && getBlogDetail();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
-
-  // if (loading) {
-  //   return <Spinner />;
-  // }
 
   const getBlogDetail = async () => {
     setLoading(true);
