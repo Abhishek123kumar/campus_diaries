@@ -56,9 +56,9 @@ const Detail = ({ setActive, user }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
-  if (loading) {
-    return <Spinner />;
-  }
+  // if (loading) {
+  //   return <Spinner />;
+  // }
   const getBlogDetail = async () => {
     setLoading(true);
     const blogRef = collection(db, "blogs");
